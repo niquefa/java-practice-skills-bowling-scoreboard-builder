@@ -1,6 +1,6 @@
-# Java Challenge by Rafael Niquefa
+# Java Bowling Scoreboard in Console App
 
-As part of the application process, here is a technical test.
+Just Having fun and practicing with java
 
 ## Current test coverage
 
