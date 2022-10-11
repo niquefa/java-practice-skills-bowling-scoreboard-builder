@@ -1,0 +1,15 @@
+com.rjc.builders
+com.rjc.constants
+com.rjc.controller
+com.rjc.entities
+com.rjc.exceptions
+com.rjc.loggers
+com.rjc.main
+com.rjc.service
+com.rjc.utils
+com.rjc.utils.datasources
+com.rjc.validators
+com.rjc.view
+src.test.java.utils
+src.test.java.validators
+src.test.service.integration
