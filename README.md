@@ -1,11 +1,8 @@
-# Bowling scoreboard generator
+# Java Practice project
 
-Just practicing Java, Java streams, JUnit test, S.O.L.I.D Principles and more.
 
-## Current test coverage
-
-**In this commit, the coverage is up to 90.5%**
-
+# Important anotation about the problem description
+The programs makes the alignment of all the **columns** using spaces and can support any length of names, including input with firstname and last name separated by spaces. NOTE: The input should be separated by tabs, it will be considered wrong input if not.
 
 ## Current test coverage
 
@@ -64,13 +61,13 @@ OS name: "mac os x", version: "11.7", arch: "x86_64", family: "mac"
 
 A Runnable jar is in the project directory ```RunnableJarExport.jar```.
 
-First, download the project to your laptop. and install java as described before.
+First, download the project and install java with a compatible version (could use the instructions before).
 
 In the command line, being in the same directory as the Jar file (assuming is the root of the project), just run the command with the input file as parameter, for example:
 
 ```java -jar RunnableJarExport.jar -f src/test/resources/positive/perfect.txt```
 
-The command above should produce an output similar to the following, there are several test files in the folder ```src/test/resources```. In the sub folder ```src/test/resources/positive``` are test files that will produce a correct output, and in the sub folder ```src/test/resources/negative``` are test files that will producea and show an error or exception because those are invalid for one or more reasons.
+The command above should produce an output similar to the one shown below, there are several test files in the folder ```src/test/resources```. In the sub folder ```src/test/resources/positive``` are test files that will produce a correct output, and in the sub folder ```src/test/resources/negative``` are test files that will produce and show an error or exception because those are invalid for one or more reasons.
 
 ## Other Example input
 
@@ -129,7 +126,6 @@ Before all do a clean just in case:
 
 First compile the project to a single JAR file:
 
-
 ```mvn clean compile assembly:single ```
 
 That will generate the jar file:
@@ -140,11 +136,11 @@ Then, for running that file with some of the test input file, you  should do:
 
 ```java -jar target/rjc-0.0.1-SNAPSHOT-jar-with-dependencies.jar -f src/test/resources/positive/scores.txt```
 
-Remember, there are 10 positive test example files and 16 negative (that are incorrect and will produce an error). This test files cover many use cases considered.
+Remember, there are 10 positive test example files and 16 negative (that are incorrect and will produce an error/exception). Those test files cover many use cases considered.
 
 # Compiling with in Eclipse IDE
 
-Is the easiest way at least to my knoledge to get a runnable jar file, it's no ideal for the test, but as a starting point is good enough to get the jar file and let it in the repo for the reviewers to test it.
+Another way of getting an executable jar file.
 
 ## Eclipse IDE version
 
@@ -164,35 +160,36 @@ Is the easiest way at least to my knoledge to get a runnable jar file, it's no i
 # Current project status
 
 ```
-[DONE]Basic project structure
-[DONE]Read data from file
-[DONE]Basic validations: rolls count, turns count, two columns, valid pins count, valid number
-[DONE]Validation by player: max number of turns/rolls, correct order in rolls numbers
-[DONE]Validation by player: Max number of knocked pins : 130
-[DONE]Validation by player: Extra chances in 10th frame
-[DONE]Validation by player: Max pins by roll is 10, by turn is 20 and in 10th frame is 30
-[DONE]Do Player entity building
-[DONE]Do ScoreBoard entity building
-[DONE]Do score printing
-[DONE]Validation by game: Make sure the game is correctly finished, i.e. all players have 10 complete frame each
-[DONE]Print F instead of 0 when F in the input
-[DONE]Do Integration test, separate integration test - unit test
-[DONE]Validation by turns: Make sure the order is correct in the input, assuming chronological order
-[DONE]Get coverage up to at least 80%, select best use cases to test
-[DONE]Manage to accept names separated by space
-[DONE]Check javadoc: at least public methods and entity classes
-[DONE]Generate javadoc
-[DONE]Last check to Readme and generated .Jar
-[DONE]Do code quality check: Delete Debug messages, use automate code quality checking tool
-[DONE]Create valid UML Diagrams
-[DONE]Rearrange Global and public constants, may be some enums will work
-[DONE]Manage to get compiling with out Eclipse or tied to a specific IDE
-[TODO]Check S.O.L.I.D. principles for possibles improvements
-[TODO]Check S.O.L.I.D. principles by building a different data source
-[TODO]Try to get rid of compiler warnings
-[TODO]Check project structure. Possible design enhance, possible refactor
-[TODO]Check if it is worth to use SpringComponents
-[TODO]Create an Exception handler hierarchy
-[TODO]Remove cognitive complexity that still exists
-[TODO]Do merge request
+- [x] Basic project structure
+- [x] Read data from file
+- [x] Basic validations: rolls count, turns count, two columns, valid pins count, valid number
+- [x] Validation by player: max number of turns/rolls, correct order in rolls numbers
+- [x] Validation by player: Max number of knocked pins : 130
+- [x] Validation by player: Extra chances in 10th frame
+- [x] Validation by player: Max pins by roll is 10, by turn is 20 and in 10th frame is 30
+- [x] Do Player entity building
+- [x] Do ScoreBoard entity building
+- [x] Do score printing
+- [x] Validation by game: Make sure the game is correctly finished, i.e. all players have 10 complete frame each
+- [x] Print F instead of 0 when F in the input
+- [x] Do Integration test, separate integration test - unit test
+- [x] Validation by turns: Make sure the order is correct in the input, assuming chronological order
+- [x] Get coverage up to at least 80%, select best use cases to test
+- [x] Manage to accept names separated by space
+- [x] Check javadoc: at least public methods and entity classes
+- [x] Generate javadoc
+- [x] Last check to Readme and generated .Jar
+- [x] Do code quality check: Delete Debug messages, use automate code quality checking tool
+- [x] Create valid UML Diagrams
+- [x] Rearrange Global and public constants, may be some enums will work
+- [x] Manage to get compiling with out Eclipse or tied to a specific IDE
+- [] Check S.O.L.I.D. principles for possibles improvements
+- [] Check S.O.L.I.D. principles by building a different data source
+- [] Try to get rid of compiler warnings
+- [] Check pipeline warnings or errors in remote repository if there are one
+- [] Check project structure. Possible design enhance, possible refactor
+- [] Check if it is worth to use SpringComponents
+- [] Create an Exception handler hierarchy
+- [] Remove cognitive complexity that still exists
+- [] Do merge request  
 ```
