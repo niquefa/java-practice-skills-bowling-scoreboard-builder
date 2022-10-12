@@ -140,7 +140,7 @@ Then, for running that file with some of the test input file, you  should do:
 
 ```java -jar target/rjc-0.0.1-SNAPSHOT-jar-with-dependencies.jar -f src/test/resources/positive/scores.txt```
 
-Remember, there are 10 positive test example files and 16 negative (that are incorrect and will produce an error). This test files cover may use cases considered.
+Remember, there are 10 positive test example files and 16 negative (that are incorrect and will produce an error). This test files cover many use cases considered.
 
 # Compiling with in Eclipse IDE
 
