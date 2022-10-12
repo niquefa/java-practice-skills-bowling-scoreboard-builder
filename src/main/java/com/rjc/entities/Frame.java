@@ -18,7 +18,7 @@ public class Frame {
 
   private ArrayList<BallResult> balls;
 
-  public int getTotalPinsInTurn() {
+  public int getTotalPinsInFrame() {
     return balls.stream().map(BallResult::getValue).mapToInt(Integer::intValue).sum();
   }
 

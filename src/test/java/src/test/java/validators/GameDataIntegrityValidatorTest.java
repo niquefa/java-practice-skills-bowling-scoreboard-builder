@@ -72,12 +72,12 @@ class GameDataIntegrityValidatorTest {
 
     assertThrows(RJCException.class, () -> {
       validateIfValidGame(buildBowlingGame(
-          readFromFileLineByLine(NEGATIVE_TEST_FILES_DIRECTORY + "many-rolls.txt")));
+          readFromFileLineByLine(NEGATIVE_TEST_FILES_DIRECTORY + "many-balls.txt")));
     });
 
     assertThrows(RJCException.class, () -> {
       validateIfValidGame(buildBowlingGame(
-          readFromFileLineByLine(NEGATIVE_TEST_FILES_DIRECTORY + "many-turns.txt")));
+          readFromFileLineByLine(NEGATIVE_TEST_FILES_DIRECTORY + "many-frames.txt")));
     });
 
     assertThrows(RJCException.class, () -> {
@@ -109,7 +109,7 @@ class GameDataIntegrityValidatorTest {
 
     validateIfValidGame(
         buildBowlingGame(
-            readFromFileLineByLine(POSITIVE_TEST_FILES_DIRECTORY + "max-posible-rolls.txt")));
+            readFromFileLineByLine(POSITIVE_TEST_FILES_DIRECTORY + "max-posible-balls.txt")));
 
     validateIfValidGame(
         buildBowlingGame(readFromFileLineByLine(POSITIVE_TEST_FILES_DIRECTORY + "perfect.txt")));
@@ -119,7 +119,7 @@ class GameDataIntegrityValidatorTest {
 
     validateIfValidGame(
         buildBowlingGame(
-            readFromFileLineByLine(POSITIVE_TEST_FILES_DIRECTORY + "spare-in-turn-10.txt")));
+            readFromFileLineByLine(POSITIVE_TEST_FILES_DIRECTORY + "spare-in-frame-10.txt")));
 
   }
 

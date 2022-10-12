@@ -21,6 +21,30 @@ import com.rjc.utils.datasources.LocalFileRepository;
  */
 public class CommandInterpreter {
 
+  private static final CommandInterpreter INSTANCE = new CommandInterpreter();
+
+  private Options options;
+
+  private CommandInterpreter() {
+
+    this.options = new Options();
+    options.addOption("f", Global.FILE_NAME_OPTION, true,
+        RJCUtils.getWorkingDirectoryMessage());
+
+    options.addOption("help", Global.FILE_NAME_OPTION, true,
+        "This app only reads data from file with the -\"f\" option.");
+  }
+
+  /**
+   * The command line retriever for the singleton instance of the
+   * CommandLineInterpreter
+   *
+   * @return
+   */
+  public static CommandInterpreter getInstance() {
+    return INSTANCE;
+  }
+
   /**
    * Runs the application
    *
@@ -30,16 +54,17 @@ public class CommandInterpreter {
   public DataRepository run(String[] args) throws FileNotFoundException {
 
     CommandLine line = parseArguments(args);
-    printApplicationHelp();
-
-    if (line.hasOption(Global.FILE_NAME_OPTION)) {
+    if (line.hasOption(Global.HELP_NAME_OPTION)) {
+      printApplicationHelp();
+      System.exit(0);
+    } else if (line.hasOption(Global.FILE_NAME_OPTION)) {
       String fileName = line.getOptionValue(Global.FILE_NAME_OPTION);
       return new LocalFileRepository(fileName);
-    } else {
-      BLog.getLogger().error("The application must receive a file as argument to work. Try again.");
-      printApplicationHelp();
-      throw new FileNotFoundException("Data file not given.");
     }
+    BLog.getLogger().error("The application must receive a file as argument to work. Try again.");
+    printApplicationHelp();
+    throw new FileNotFoundException("Data file not given.");
+
   }
 
   /**
@@ -80,7 +105,6 @@ public class CommandInterpreter {
    * @return application <code>Options</code>
    */
   private Options getOptions() {
-    return new Options().addOption("f", Global.FILE_NAME_OPTION, true,
-        RJCUtils.getWorkingDirectoryMessage());
+    return this.options;
   }
 }

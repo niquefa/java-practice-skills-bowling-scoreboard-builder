@@ -16,4 +16,5 @@ public final class Global {
   public static final String NEGATIVE_TEST_FILES_DIRECTORY = "./src/test/resources/negative/";
   public static final String POSITIVE_TEST_FILES_DIRECTORY = "./src/test/resources/positive/";
   public static final String VALID_TOKEN_SEPARATOR = "\t";
+  public static final String HELP_NAME_OPTION = "help";
 }

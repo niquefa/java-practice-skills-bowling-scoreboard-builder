@@ -155,6 +155,9 @@ public final class ConsoleViewUtilities {
     if (ballResult.isFaul()) {
       return FAUL;
     }
+    if (ballResult.getValue() == MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) {
+      return STRIKE;
+    }
     return ballResult.getValue() == 0 ? ZERO_BALLS : String.valueOf(ballResult.getValue());
   }
 
@@ -169,44 +172,45 @@ public final class ConsoleViewUtilities {
 
     String answer = COLUMN_FIRST_SYMBOLS;
 
-    if (balls.get(0).getValue() == MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) { // Strike in first ball
+    // Strike in first ball
+    if (balls.get(0).getValue() == MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) {
       answer += STRIKE + EMPTY_SPACE + EMPTY_SPACE;
-    } else if (balls.get(0).getValue() == 0) {
-      answer += getBallString(balls.get(0)) + EMPTY_SPACE + EMPTY_SPACE;
+      if (balls.size() != 3) {
+        throw new UnforseenGameBuildingException(
+            String.format(
+                "Error: Last frame with wrong number of balls; %d in info: %s, should be 3 player %s",
+                balls.size(), balls, playerName));
+      }
+      return removeSpacesRight(answer + buildLastTwoBalls(balls.get(1), balls.get(2)));
     }
 
-    if (balls.size() < 2) {
+    answer += getBallString(balls.get(0)) + EMPTY_SPACE + EMPTY_SPACE;
+
+    // Spare
+    if (balls.get(0).getValue() + balls.get(1).getValue() == MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) {
+      if (balls.size() != 3) {
+        throw new UnforseenGameBuildingException(
+            String.format(
+                "Error: Last frame with other than thre balls when spare %s for player %s", balls,
+                playerName));
+      }
+      return removeSpacesRight(answer + buildLastTwoBalls(balls.get(1), balls.get(2)));
+    }
+
+    if (balls.size() != 2) {
       throw new UnforseenGameBuildingException(
-          String.format("Error: Last frame with only one ball for player %s", playerName));
+          String.format(
+              "Error: Last frame with other than two balls when no strike %s for player %s", balls,
+              playerName));
     }
 
-    if (balls.get(1).getValue() == MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) { // Strike in second ball
-      answer += STRIKE + EMPTY_SPACE + EMPTY_SPACE;
-    } else if (balls.get(1).getValue() == 0) {
-      answer += ZERO_BALLS + EMPTY_SPACE + EMPTY_SPACE;
-    } else if (balls.get(0).getValue()
-        + balls.get(1).getValue() == MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) {
-      answer += SPARE + EMPTY_SPACE + EMPTY_SPACE;
-    } else {
-      answer += getBallString(balls.get(1)) + EMPTY_SPACE + EMPTY_SPACE;
-    }
+    // No strike and no spare in last ball
+    return removeSpacesRight(answer + getBallString(balls.get(1)));
+  }
 
-    if (balls.size() < 3) {
-      return answer;
-    }
+  private static String buildLastTwoBalls(BallResult a, BallResult b) {
 
-    if (balls.get(2).getValue() == MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) { // Strike in third ball
-      answer += STRIKE + EMPTY_SPACE + EMPTY_SPACE;
-    } else if (balls.get(2).getValue() == 0) {
-      answer += getBallString(balls.get(2)) + EMPTY_SPACE + EMPTY_SPACE;
-    } else if (balls.get(1).getValue()
-        + balls.get(2).getValue() == MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) {
-      answer += SPARE + EMPTY_SPACE + EMPTY_SPACE;
-    } else {
-      answer += getBallString(balls.get(2)) + EMPTY_SPACE + EMPTY_SPACE;
-    }
-
-    return removeSpacesRight(answer);
+    return getBallString(a) + EMPTY_SPACE + EMPTY_SPACE + getBallString(b);
   }
 
   private static String removeSpacesRight(String string) {

@@ -18,7 +18,7 @@ import com.rjc.utils.datasources.DataRepository;
 public class BowlingController {
 
   public void run(String[] args) throws IOException, RJCException {
-    DataRepository dataRepository = new CommandInterpreter().run(args);
+    DataRepository dataRepository = CommandInterpreter.getInstance().run(args);
     dataRepository.create();
     new BowlingService(dataRepository).process();
   }

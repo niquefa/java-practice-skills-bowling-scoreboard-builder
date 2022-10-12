@@ -13,7 +13,9 @@ import com.rjc.exceptions.InvalidGameDataException;
 import com.rjc.exceptions.NotEnoughFramesForPlayerException;
 import com.rjc.exceptions.RJCException;
 import com.rjc.exceptions.ToFewBallsInPlayerException;
+import com.rjc.exceptions.WrongInfoInDataInput;
 import com.rjc.exceptions.WrongNumberOfBallsInLastFrameException;
+import com.rjc.exceptions.WrongPinNumbersInFrame;
 import com.rjc.utils.GameUtilities;
 
 /**
@@ -54,7 +56,7 @@ public class GameDataIntegrityValidator {
     SortedMap<String, List<BallResult>> playersToBallsListmap = GameUtilities.getPlayersGame(game);
 
     if (!atLeastOnePlayerAndMinimumBallsForPlayerOK(playersToBallsListmap)
-        || !allMeetMaxPossiblePinsKnockedByRoll(playersToBallsListmap)
+        || !allMeetMaxPossiblePinsKnockedByBall(playersToBallsListmap)
         || !allMeetMaxPossiblePinsKnocked(playersToBallsListmap)
         || !allMeetMaxPossibleBalls(playersToBallsListmap)) {
       throw new InvalidGameDataException(
@@ -70,7 +72,7 @@ public class GameDataIntegrityValidator {
 
     validateAllPlayersHaveThrownAllBalls(game, playersToBallsListmap);
 
-    if (!correctTurnIntercalation(game)) {
+    if (!correctFrameIntercalation(game)) {
       throw new InvalidGameDataException(
           String.format("Error: Invalid game data. Do not meet player intercalation. Game data: %s",
               game.toString()));
@@ -87,7 +89,8 @@ public class GameDataIntegrityValidator {
    * @throws InvalidGameDataException when the given data has incorrect
    *                                  intercalation of players taking turns
    */
-  public static boolean correctTurnIntercalation(BowlingGame game) throws InvalidGameDataException {
+  public static boolean correctFrameIntercalation(BowlingGame game)
+      throws InvalidGameDataException {
 
     try {
       List<Ball> balls = game.getBalls();
@@ -106,7 +109,7 @@ public class GameDataIntegrityValidator {
   }
 
   private static boolean turnsAreCorrect(List<Ball> balls, List<String> playerOrder,
-      SortedMap<String, String> previusPlayer) {
+      SortedMap<String, String> previusPlayer) throws RJCException {
     String currentPreviusPlayer = previusPlayer.get(playerOrder.get(0));
 
     int ballIndex = 0;
@@ -137,6 +140,13 @@ public class GameDataIntegrityValidator {
         currentPreviusPlayer = currentPlayer;
       }
     }
+
+    return getTurnsHelper(ballIndex, previusPlayer, currentPreviusPlayer, playerOrder, balls);
+  }
+
+  private static boolean getTurnsHelper(int ballIndex, SortedMap<String, String> previusPlayer,
+      String currentPreviusPlayer, List<String> playerOrder, List<Ball> balls)
+      throws WrongPinNumbersInFrame, WrongInfoInDataInput {
     for (String currentPlayer : playerOrder) {
       if (!currentPreviusPlayer.equals(previusPlayer.get(currentPlayer))) {
         return false;
@@ -170,12 +180,12 @@ public class GameDataIntegrityValidator {
   /**
    * @param frameBalls The balls of the frame
    * @return true if the balls in the argument represent a valid last turn of a
-   *         player. the only possible values for a valid last turn are: One roll
-   *         with value in [0,10] Two rolls, the first a 10 and the second a value
-   *         in [0,10] Three rolls, the first 2 both in 10 and the third one with
+   *         player. the only possible values for a valid last turn are: One ball
+   *         with value in [0,10] Two balls, the first a 10 and the second a value
+   *         in [0,10] Three balls, the first 2 both in 10 and the third one with
    *         a value in [0,10]
    */
-  public static boolean validLastTurn(List<BallResult> frameBalls) {
+  public static boolean validLastFrame(List<BallResult> frameBalls) {
 
     if (frameBalls.stream().anyMatch(
         ballResult -> ballResult.getValue() < 0
@@ -234,10 +244,27 @@ public class GameDataIntegrityValidator {
     return true;
   }
 
-  private static boolean playerEarnExtraBall(Ball playerFirstBall, Ball playerSecondBall) {
-    return Integer.parseInt(playerFirstBall.getResult().trim())
-        + Integer
-            .parseInt(playerSecondBall.getResult().trim()) >= MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL;
+  private static boolean playerEarnExtraBall(Ball playerFirstBall, Ball playerSecondBall)
+      throws WrongPinNumbersInFrame, WrongInfoInDataInput {
+    int playerTotalBalls = getPlayerBallPins(playerFirstBall) + getPlayerBallPins(playerSecondBall);
+    if (playerTotalBalls < 0 || playerTotalBalls > MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) {
+      throw new WrongPinNumbersInFrame(
+          String.format("Wrong pin knocked number for players two balls: %s and %s",
+              playerFirstBall, playerSecondBall));
+    }
+
+    return playerTotalBalls == MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL;
+  }
+
+  private static int getPlayerBallPins(Ball ball) throws WrongInfoInDataInput {
+    if (!RawDataValidator.isOnlyDigitsOrFAndMeetsMaxPinLimit(ball.getResult())) {
+      throw new WrongInfoInDataInput(
+          String.format("Wrong info in data input: %s and %s", ball.getName(), ball.getResult()));
+    }
+    if (ball.getResult().trim().equalsIgnoreCase("F")) {
+      return 0;
+    }
+    return Integer.parseInt(ball.getResult().trim());
   }
 
   private static SortedMap<String, String> buildPreviusPlayerMap(List<String> playerOrder) {
@@ -249,7 +276,7 @@ public class GameDataIntegrityValidator {
     return previusPlayer;
   }
 
-  private static boolean allMeetMaxPossiblePinsKnockedByRoll(
+  private static boolean allMeetMaxPossiblePinsKnockedByBall(
       SortedMap<String, List<BallResult>> map) {
     for (Entry<String, List<BallResult>> player : map.entrySet()) {
       if (player.getValue().stream().anyMatch(

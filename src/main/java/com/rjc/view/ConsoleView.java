@@ -5,7 +5,6 @@ import static com.rjc.view.ConsoleViewUtilities.buildPinFallsForPlayer;
 import static com.rjc.view.ConsoleViewUtilities.buildScoreString;
 import static com.rjc.view.ConsoleViewUtilities.getFirstColumnWidth;
 
-import java.nio.CharBuffer;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,8 +21,6 @@ import com.rjc.loggers.BLog;
  */
 public class ConsoleView extends Viewer {
 
-  private static final int RECOMENDED_SCREEN_WIDTH = 80;
-
   public ConsoleView(ScoreBoard scoreBoard) {
     super(scoreBoard);
   }
@@ -34,9 +31,6 @@ public class ConsoleView extends Viewer {
   @Override
   public void showScoreBoard() {
 
-    System.out.println();
-    System.out.println(
-        CharBuffer.allocate(ConsoleView.RECOMENDED_SCREEN_WIDTH).toString().replace('\0', '_'));
     System.out.println();
     System.out.println(getTxtScoreBoard());
     System.out.println();
@@ -55,7 +49,7 @@ public class ConsoleView extends Viewer {
         txtGameBoard.append(buildPinFallsForPlayer(player, firstColumnWidth) + "\n");
         txtGameBoard.append(buildScoreString(player, firstColumnWidth) + "\n");
       } catch (Exception e) {
-        BLog.getLogger().error("ERROR: Unforseen behaivior building the scoreboard.");
+        BLog.getLogger().error("ERROR: Unforseen behaiviour building the scoreboard.");
         BLog.getLogger().error(e.getMessage());
         BLog.getLogger().error(e.getStackTrace());
         e.printStackTrace();

@@ -38,4 +38,5 @@ public interface DataRepository {
    * @throws IllegalArgumentException
    */
   public void create() throws IOException, IllegalArgumentException, RJCException;
+
 }

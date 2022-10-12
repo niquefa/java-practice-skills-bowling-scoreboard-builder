@@ -1,12 +1,55 @@
-Ana Maria	10
-Ana Maria	10
-Ana Maria	10
-Ana Maria	10
-Ana Maria	10
-Ana Maria	10
-Ana Maria	10
-Ana Maria	10
-Ana Maria	10
-Ana Maria	10
-Ana Maria	10
-Ana Maria	10
+Jhon Willam Jose Alexander	1
+Jhon Willam Jose Alexander	9
+Vi	1
+Vi	2
+Jinx	2
+Jinx	4
+Jhon Willam Jose Alexander	1
+Jhon Willam Jose Alexander	1
+Vi	5
+Vi	2
+Jinx	2
+Jinx	4
+Jhon Willam Jose Alexander	F
+Jhon Willam Jose Alexander	0
+Vi	6
+Vi	2
+Jinx	2
+Jinx	4
+Jhon Willam Jose Alexander	0
+Jhon Willam Jose Alexander	10
+Vi	1
+Vi	7
+Jinx	2
+Jinx	4
+Jhon Willam Jose Alexander	10
+Vi	1
+Vi	8
+Jinx	2
+Jinx	4
+Jhon Willam Jose Alexander	10
+Vi	1
+Vi	2
+Jinx	2
+Jinx	4
+Jhon Willam Jose Alexander	10
+Vi	1
+Vi	2
+Jinx	2
+Jinx	4
+Jhon Willam Jose Alexander	10
+Vi	1
+Vi	9
+Jinx	2
+Jinx	4
+Jhon Willam Jose Alexander	10
+Vi	1
+Vi	7
+Jinx	2
+Jinx	4
+Jhon Willam Jose Alexander	1
+Jhon Willam Jose Alexander	1
+Vi	3
+Vi	2
+Jinx	2
+Jinx	4

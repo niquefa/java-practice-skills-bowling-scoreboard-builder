@@ -77,7 +77,6 @@ public final class Builders {
       players.add(player);
 
     }
-
     return new ScoreBoard(players);
   }
 

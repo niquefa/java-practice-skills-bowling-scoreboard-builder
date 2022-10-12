@@ -23,6 +23,8 @@ import com.rjc.validators.GameDataIntegrityValidator;
  */
 public final class GameUtilities {
 
+  private static final int WRONG_INDEX_FLAG_FOR_BALL_VALUE = -1;
+
   private GameUtilities() {
   }
 
@@ -36,7 +38,7 @@ public final class GameUtilities {
 
     for (Ball ball : game.getBalls()) {
       String player = ball.getName();
-      int points = getPinsKnocedDownOnRoll(ball);
+      int points = getPinsKnocedDownOnBall(ball);
       mapToReturn.putIfAbsent(player, new ArrayList<>());
       mapToReturn.get(player).add(new BallResult(isFaul(ball.getResult()), points));
     }
@@ -50,12 +52,12 @@ public final class GameUtilities {
    * @param <code>ArrayList<String><code> The list to build the bowling game from
    * @return <BowlingGrame> instance of the BowlingGame builded
    */
-  public static BowlingGame buildBowlingGame(List<String> game) {
-    ArrayList<Ball> turns = new ArrayList<>();
-    game.stream().filter(Objects::nonNull).filter(entryString -> entryString.trim().length() > 0)
-        .forEach(entryString -> turns.add(buildFrames(entryString)));
+  public static BowlingGame buildBowlingGame(List<String> rawData) {
+    ArrayList<Ball> balls = new ArrayList<>();
+    rawData.stream().filter(Objects::nonNull).filter(entryString -> entryString.trim().length() > 0)
+        .forEach(entryString -> balls.add(buildFrames(entryString)));
 
-    return new BowlingGame(turns);
+    return new BowlingGame(balls);
   }
 
   /**
@@ -67,8 +69,8 @@ public final class GameUtilities {
     ArrayList<String> playersOrder = new ArrayList<>();
     HashSet<String> playersDiscovered = new HashSet<>();
 
-    for (Ball roll : game.getBalls()) {
-      String player = roll.getName();
+    for (Ball ball : game.getBalls()) {
+      String player = ball.getName();
       if (!playersDiscovered.contains(player)) {
         playersOrder.add(player);
         playersDiscovered.add(player);
@@ -80,66 +82,39 @@ public final class GameUtilities {
 
   /**
    * @param playerName
-   * @param rolls
+   * @param balls
    * @return <code>ArrayList<code> of <code>Frame<code> when the given balls are
    *         considered a valid sequences of balls for a single player, null
    *         otherwise
    */
-  public static List<Frame> getFrames(List<BallResult> rolls) {
+  public static List<Frame> getFrames(List<BallResult> balls) {
 
     ArrayList<Frame> frames = new ArrayList<>();
+    int indexCurrentBall = 0;
+    while (indexCurrentBall < balls.size()) {
 
-    for (int indexCurrentBall = 0; indexCurrentBall < rolls.size(); ++indexCurrentBall) {
-
-      // Only one last turn remains for all the rest of rolls
+      // Only one last frame remains for all the rest of balls
       if (frames.size() == GameDataIntegrityValidator.MAX_POSSIBLE_FRAMES - 1) {
-
-        ArrayList<BallResult> frameBalls = new ArrayList<>();
-        for (int i = indexCurrentBall; i < rolls.size(); ++i) {
-          frameBalls.add(rolls.get(i));
-        }
-
-        frames.add(new Frame(frameBalls));
-
-        if (!GameDataIntegrityValidator.validLastTurn(frameBalls)) {
-          return new ArrayList<>();
-        }
-        return frames;
+        return getLastFrame(indexCurrentBall, balls, frames);
       }
 
-      BallResult pins = rolls.get(indexCurrentBall);
-      if (pins.getValue() == GameDataIntegrityValidator.MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) {
-        ArrayList<BallResult> frameBalls = new ArrayList<>();
-        frameBalls.add(new BallResult(pins.isFaul(), pins.getValue()));
-        frames.add(new Frame(frameBalls));
+      BallResult pins = balls.get(indexCurrentBall);
+
+      boolean currentFrameBuildingFinishedFlag = currentFrameBuildingCouldFinishInOneStep(
+          indexCurrentBall,
+          balls,
+          pins);
+
+      indexCurrentBall = doMinimalCurrentFrameBuilding(indexCurrentBall, balls, frames, pins);
+
+      if (currentFrameBuildingFinishedFlag) {
         continue;
       }
+      indexCurrentBall = addNextFrameIfPossibleAndGetSuccessFlag(indexCurrentBall, balls, frames,
+          pins);
 
-      // if Current throw is the last one. but is a game without finish in the input
-      // for this player
-      if (indexCurrentBall + 1 == rolls.size()) {
-        ArrayList<BallResult> frameBalls = new ArrayList<>();
-        frameBalls.add(pins);
-        frames.add(new Frame(frameBalls));
-        continue;
-      }
-
-      ArrayList<BallResult> frameBalls = new ArrayList<>();
-      frameBalls.add(pins);
-
-      BallResult nextPins = rolls.get(++indexCurrentBall);
-
-      if (nextPins.getValue() > GameDataIntegrityValidator.MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) {
+      if (indexCurrentBall == WRONG_INDEX_FLAG_FOR_BALL_VALUE)
         return new ArrayList<>();
-      }
-      frameBalls.add(nextPins);
-      Frame currentFrame = new Frame(frameBalls);
-      frames.add(currentFrame);
-
-      if (currentFrame
-          .getTotalPinsInTurn() > GameDataIntegrityValidator.MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) {
-        return new ArrayList<>();
-      }
     }
 
     return frames.size() <= GameDataIntegrityValidator.MAX_POSSIBLE_FRAMES ? frames
@@ -178,11 +153,80 @@ public final class GameUtilities {
         .mapToInt(Integer::intValue).sum();
   }
 
+  private static int addNextFrameIfPossibleAndGetSuccessFlag(int indexCurrentBall,
+      List<BallResult> balls,
+      ArrayList<Frame> frames, BallResult pins) {
+    ArrayList<BallResult> frameBalls = new ArrayList<>();
+    frameBalls.add(pins);
+
+    BallResult nextPins = balls.get(++indexCurrentBall);
+
+    if (nextPins.getValue() > GameDataIntegrityValidator.MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) {
+      return WRONG_INDEX_FLAG_FOR_BALL_VALUE;
+    }
+    frameBalls.add(nextPins);
+    Frame currentFrame = new Frame(frameBalls);
+    frames.add(currentFrame);
+
+    if (currentFrame
+        .getTotalPinsInFrame() > GameDataIntegrityValidator.MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) {
+      return WRONG_INDEX_FLAG_FOR_BALL_VALUE;
+    }
+    return indexCurrentBall + 1;
+  }
+
+  private static boolean currentFrameBuildingCouldFinishInOneStep(int indexCurrentBall,
+      List<BallResult> balls, BallResult pins) {
+    return (pins.getValue() == GameDataIntegrityValidator.MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL)
+        || (indexCurrentBall + 1 == balls.size());
+
+  }
+
+  private static int doMinimalCurrentFrameBuilding(
+      int indexCurrentBall, List<BallResult> balls, ArrayList<Frame> frames, BallResult pins) {
+
+    // Current pin got a strike, so the current frame is finished
+    if (pins.getValue() == GameDataIntegrityValidator.MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL) {
+      ArrayList<BallResult> frameBalls = new ArrayList<>();
+      frameBalls.add(new BallResult(pins.isFaul(), pins.getValue()));
+      frames.add(new Frame(frameBalls));
+      indexCurrentBall++;
+      return indexCurrentBall;
+    }
+
+    // If Current throw is the last one. but is a game without finish in the input
+    // for this player, this should never be possible for a complete and correct
+    // game
+    if (indexCurrentBall + 1 == balls.size()) {
+      ArrayList<BallResult> frameBalls = new ArrayList<>();
+      frameBalls.add(pins);
+      frames.add(new Frame(frameBalls));
+      indexCurrentBall++;
+      return indexCurrentBall;
+    }
+    return indexCurrentBall;
+  }
+
+  private static List<Frame> getLastFrame(
+      int indexCurrentBall, List<BallResult> balls, ArrayList<Frame> frames) {
+    ArrayList<BallResult> frameBalls = new ArrayList<>();
+    for (int i = indexCurrentBall; i < balls.size(); ++i) {
+      frameBalls.add(balls.get(i));
+    }
+
+    frames.add(new Frame(frameBalls));
+
+    if (!GameDataIntegrityValidator.validLastFrame(frameBalls)) {
+      return new ArrayList<>();
+    }
+    return frames;
+  }
+
   private static boolean isFaul(String ball) {
     return "F".equalsIgnoreCase(ball);
   }
 
-  private static int getPinsKnocedDownOnRoll(Ball ball) {
+  private static int getPinsKnocedDownOnBall(Ball ball) {
     return isFaul(ball.getResult().trim()) ? 0 : Integer.parseInt(ball.getResult().trim());
   }
 

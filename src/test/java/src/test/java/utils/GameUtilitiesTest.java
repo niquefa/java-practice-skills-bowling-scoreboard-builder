@@ -13,7 +13,7 @@ import com.rjc.utils.GameUtilities;
 class GameUtilitiesTest {
 
   @Test
-  void testMeetsMaxNumberOfTurnsWhenShouldReturnTrue() {
+  void testMeetsMaxNumberOfFramesWhenShouldReturnTrue() {
 
     assertFalse(GameUtilities
         .getFrames(ListOf(new int[] { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 0 })).isEmpty());
@@ -78,7 +78,7 @@ class GameUtilitiesTest {
   }
 
   @Test
-  void testMeetsMaxNumberOfTurnsWhenShouldReturnFalse() {
+  void testMeetsMaxNumberOfFramesWhenShouldReturnFalse() {
 
     assertTrue(GameUtilities
         .getFrames(ListOf(new int[] { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, -1 })).isEmpty());

@@ -1,12 +1,15 @@
-# Java Practice project
-
+# Just to practice Rafael Niquefa
 
 # Important anotation about the problem description
-The programs makes the alignment of all the **columns** using spaces and can support any length of names, including input with firstname and last name separated by spaces. NOTE: The input should be separated by tabs, it will be considered wrong input if not.
+
+I changed a requirement in the problem description because I considered very desirable. That was, for the output format:
+```All values are tab-separated.```
+
+The program do not follow that requirement because if followed, that could cause to print a scoreboard very hard to read when for example there are very long names and very short names of players in the same input. The programs makes the alignment of all the **columns** using spaces and can support any length of names, including input with firstname and last name separated by spaces. NOTE: The input should be separated by tabs, it will be considered wrong input if not.
 
 ## Current test coverage
 
-**In this commit, the coverage is up to 90.5%**
+**In this commit, the coverage is up to 89.3%**
 
 # Environment
 
@@ -90,6 +93,8 @@ Score    16     25     44     53     82     101    110    124    132    151
 
 ## Other Example output
 
+```java -jar RunnableJarExport.jar -f src/test/resources/positive/5-players-with-spares.txt```
+
 ```
 usage: Bowling Scoreboad Building APP [-f <arg>]
  -f,--filename <arg>   Current working directory :
@@ -136,7 +141,7 @@ Then, for running that file with some of the test input file, you  should do:
 
 ```java -jar target/rjc-0.0.1-SNAPSHOT-jar-with-dependencies.jar -f src/test/resources/positive/scores.txt```
 
-Remember, there are 10 positive test example files and 16 negative (that are incorrect and will produce an error/exception). Those test files cover many use cases considered.
+Remember, there are tens of positive test example files and tens of negative (that are incorrect and will produce an error/exception). Those test files cover many use cases considered.
 
 # Compiling with in Eclipse IDE
 
@@ -183,13 +188,16 @@ Another way of getting an executable jar file.
 - [x] Create valid UML Diagrams
 - [x] Rearrange Global and public constants, may be some enums will work
 - [x] Manage to get compiling with out Eclipse or tied to a specific IDE
+- [x] Remove cognitive complexity that still exists reporetd by sonarlint
+- [x] Improve global exception handling
 - [] Check S.O.L.I.D. principles for possibles improvements
 - [] Check S.O.L.I.D. principles by building a different data source
-- [] Try to get rid of compiler warnings
+- [] Get rid of compiler warnings
 - [] Check pipeline warnings or errors in remote repository if there are one
 - [] Check project structure. Possible design enhance, possible refactor
 - [] Check if it is worth to use SpringComponents
-- [] Create an Exception handler hierarchy
-- [] Remove cognitive complexity that still exists
+- [] Create an Exception handler hierarchy or another way to hadle exceptions
+- [] Attend CodeStyle pluggin warnings
+- [] Attend PMD pluggin warnings
 - [] Do merge request  
 ```
