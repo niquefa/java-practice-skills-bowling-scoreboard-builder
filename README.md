@@ -6,6 +6,11 @@ Just practicing Java, Java streams, JUnit test, S.O.L.I.D Principles and more.
 
 **In this commit, the coverage is up to 90.5%**
 
+
+## Current test coverage
+
+**In this commit, the coverage is up to 90.5%**
+
 # Environment
 
 ## Java and Maven Environment
@@ -55,18 +60,17 @@ Default locale: es_419, platform encoding: UTF-8
 OS name: "mac os x", version: "11.7", arch: "x86_64", family: "mac"
 ```
 
+# Do not want to compile? just run the program
 
-# Running the program
-
-A Runnable jar is in the project directory ```LastStableVersion.jar```.
+A Runnable jar is in the project directory ```RunnableJarExport.jar```.
 
 First, download the project to your laptop. and install java as described before.
 
 In the command line, being in the same directory as the Jar file (assuming is the root of the project), just run the command with the input file as parameter, for example:
 
-```java -jar LastStableVersion.jar -f src/test/resources/positive/perfect.txt```
+```java -jar RunnableJarExport.jar -f src/test/resources/positive/perfect.txt```
 
-The command above should produce an output similar to the following, there are several test files in the folder ```src/test/resources```. In the sub folder ```src/test/resources/positive``` are test files that will produce a correct output, and in the sub folder ```src/tset/resources/negative``` are test files that will producea and show an error or exception because those are invalid for one or more reasons.
+The command above should produce an output similar to the following, there are several test files in the folder ```src/test/resources```. In the sub folder ```src/test/resources/positive``` are test files that will produce a correct output, and in the sub folder ```src/test/resources/negative``` are test files that will producea and show an error or exception because those are invalid for one or more reasons.
 
 ## Other Example input
 
@@ -79,10 +83,10 @@ usage: Bowling Scoreboad Building APP [-f <arg>]
 ________________________________________________________________________________
 
 Frame    1      2      3      4      5      6      7      8      9      10     
-Charles
+Jeff
 Pinfalls    X   7  /   9  0      X   0  8   8  /   F  6      X      X   X  8  1
 Score    20     39     48     66     74     84     90     120    148    167
-George
+John
 Pinfalls 3  /   6  3      X   8  1      X      X   9  0   7  /   4  4   X  9  0
 Score    16     25     44     53     82     101    110    124    132    151
 ```
@@ -115,11 +119,32 @@ Pinfalls   4  /      X      X      X      X      X      X      X      X   X  X  
 Score      20     50     80     110    140    170    200    230    260    290
 ```
 
+# Compile using mvn in the command line
+
+For this to work you should download the project, and put the working directory in the project root. Also you should had installed Java an Maven in the versions described before.
+
+Before all do a clean just in case:
+
+```mvn clean```
+
+First compile the project to a single JAR file:
+
+
+```mvn clean compile assembly:single ```
+
+That will generate the jar file:
+
+```/target/rjc-0.0.1-SNAPSHOT-jar-with-dependencies.jar```
+
+Then, for running that file with some of the test input file, you  should do:
+
+```java -jar target/rjc-0.0.1-SNAPSHOT-jar-with-dependencies.jar -f src/test/resources/positive/scores.txt```
+
+Remember, there are 10 positive test example files and 16 negative (that are incorrect and will produce an error). This test files cover may use cases considered.
+
 # Compiling with in Eclipse IDE
 
 Is the easiest way at least to my knoledge to get a runnable jar file, it's no ideal for the test, but as a starting point is good enough to get the jar file and let it in the repo for the reviewers to test it.
-
-TODO: After finish all the functionality I should try to get the jar file via command line in a IDE and platform independen way.
 
 ## Eclipse IDE version
 
@@ -136,9 +161,6 @@ TODO: After finish all the functionality I should try to get the jar file via co
 - Select “Package required libraries into generated JAR”
 - Click finish
 
-# Compiling via command line (WIP-TODO)
-
-This is a TODO; A WORK IN PROGRESS. I still have not worked this out yet :(.
 # Current project status
 
 ```
@@ -163,7 +185,8 @@ This is a TODO; A WORK IN PROGRESS. I still have not worked this out yet :(.
 [DONE]Last check to Readme and generated .Jar
 [DONE]Do code quality check: Delete Debug messages, use automate code quality checking tool
 [DONE]Create valid UML Diagrams
-[TODO]Manage to get compiling with out Eclipse or tied to a specific IDE
+[DONE]Rearrange Global and public constants, may be some enums will work
+[DONE]Manage to get compiling with out Eclipse or tied to a specific IDE
 [TODO]Check S.O.L.I.D. principles for possibles improvements
 [TODO]Check S.O.L.I.D. principles by building a different data source
 [TODO]Try to get rid of compiler warnings
