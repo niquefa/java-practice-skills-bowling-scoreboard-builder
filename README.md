@@ -190,7 +190,6 @@ Is the easiest way at least to my knoledge to get a runnable jar file, it's no i
 [TODO]Check S.O.L.I.D. principles for possibles improvements
 [TODO]Check S.O.L.I.D. principles by building a different data source
 [TODO]Try to get rid of compiler warnings
-[TODO]Check pipeline warnings or errors in git.jobsity.com
 [TODO]Check project structure. Possible design enhance, possible refactor
 [TODO]Check if it is worth to use SpringComponents
 [TODO]Create an Exception handler hierarchy
