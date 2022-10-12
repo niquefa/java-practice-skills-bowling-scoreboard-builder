@@ -7,6 +7,14 @@ import com.rjc.exceptions.EmptyDataSourceException;
 import com.rjc.exceptions.WrongTokenCountInRawDataEntry;
 import com.rjc.exceptions.WrongValueInSecondColumnException;
 
+/**
+ * Class with utilities to validate the data the app will take as input, just
+ * basic validations. This class do not validates data integrity or coherence.
+ *
+ * @author niquefa
+ *
+ */
+
 public final class RawDataValidator {
 
   private RawDataValidator() {

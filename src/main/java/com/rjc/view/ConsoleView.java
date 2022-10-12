@@ -13,6 +13,13 @@ import com.rjc.entities.Player;
 import com.rjc.entities.ScoreBoard;
 import com.rjc.loggers.BLog;
 
+/**
+ * Concrete implementation for showing the Scoreboard of the bowling game from
+ * the input to the app
+ *
+ * @author niquefa
+ *
+ */
 public class ConsoleView extends Viewer {
 
   private static final int RECOMENDED_SCREEN_WIDTH = 80;
@@ -47,9 +54,10 @@ public class ConsoleView extends Viewer {
       try {
         txtGameBoard.append(buildPinFallsForPlayer(player, firstColumnWidth) + "\n");
         txtGameBoard.append(buildScoreString(player, firstColumnWidth) + "\n");
-
       } catch (Exception e) {
-        BLog.getLogger().error("ERROR: Unforseen behaivior");
+        BLog.getLogger().error("ERROR: Unforseen behaivior building the scoreboard.");
+        BLog.getLogger().error(e.getMessage());
+        BLog.getLogger().error(e.getStackTrace());
         e.printStackTrace();
       }
 

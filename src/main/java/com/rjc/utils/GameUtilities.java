@@ -18,7 +18,7 @@ import com.rjc.validators.GameDataIntegrityValidator;
 /**
  * Utilities to get information from the bowling game data.
  *
- * @author coderniquefa
+ * @author niquefa
  *
  */
 public final class GameUtilities {

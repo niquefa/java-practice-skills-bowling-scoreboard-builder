@@ -5,6 +5,12 @@ import java.util.List;
 
 import com.rjc.exceptions.RJCException;
 
+/**
+ * A Data repository valid for this app
+ *
+ * @author niquefa
+ *
+ */
 public interface DataRepository {
 
   /**

@@ -1,10 +1,10 @@
-# Java Challenge by Rafael Niquefa
+# Bowling scoreboard generator
 
-As part of the application process, here is a technical test.
+Just practicing Java, Java streams, JUnit test, S.O.L.I.D Principles and more.
 
 ## Current test coverage
 
-**In this commit, the coverage is up to 88.6%**
+**In this commit, the coverage is up to 90.5%**
 
 # Environment
 
@@ -58,13 +58,13 @@ OS name: "mac os x", version: "11.7", arch: "x86_64", family: "mac"
 
 # Running the program
 
-A Runnable jar is in the project directory ```RunnableJarExport.jar```.
+A Runnable jar is in the project directory ```LastStableVersion.jar```.
 
 First, download the project to your laptop. and install java as described before.
 
 In the command line, being in the same directory as the Jar file (assuming is the root of the project), just run the command with the input file as parameter, for example:
 
-```java -jar RunnableJarExport.jar -f src/test/resources/positive/perfect.txt```
+```java -jar LastStableVersion.jar -f src/test/resources/positive/perfect.txt```
 
 The command above should produce an output similar to the following, there are several test files in the folder ```src/test/resources```. In the sub folder ```src/test/resources/positive``` are test files that will produce a correct output, and in the sub folder ```src/tset/resources/negative``` are test files that will producea and show an error or exception because those are invalid for one or more reasons.
 

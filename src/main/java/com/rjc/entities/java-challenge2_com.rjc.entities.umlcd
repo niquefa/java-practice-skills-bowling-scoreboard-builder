@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_KXO8wEnBEe2dKMuKllvcPQ">
+  <modelElement href="java-challenge2.uml#_KF3f8EnBEe2dKMuKllvcPQ"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Ky_EoEnBEe2dKMuKllvcPQ" source="_Ky_EqUnBEe2dKMuKllvcPQ">
+    <modelElement href="java-challenge2.uml#_KG6BwEnBEe2dKMuKllvcPQ"/>
+    <visualProperties xmi:id="_KzI1oEnBEe2dKMuKllvcPQ" position="190.0,190.0"/>
+    <stereotypes xmi:id="_Ky_EoUnBEe2dKMuKllvcPQ" name="Reference">
+      <modelElement href="java-challenge2.uml#_KG6BwknBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_Ky_EoknBEe2dKMuKllvcPQ" text=""/>
+    <sourceRole xmi:id="_Ky_Eo0nBEe2dKMuKllvcPQ" aggregationKind="NONE" name="">
+      <modelElement href="java-challenge2.uml#_KG6BwUnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_Ky_EpEnBEe2dKMuKllvcPQ" label="+"/>
+      <cardinality xmi:id="_Ky_EpUnBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_Ky_EpknBEe2dKMuKllvcPQ" aggregationKind="NONE" name="balls" navigable="true">
+      <modelElement href="java-challenge2.uml#_KG0iMEnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_Ky_Ep0nBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_Ky_EqEnBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_KzASwEnBEe2dKMuKllvcPQ" source="_KzA51knBEe2dKMuKllvcPQ">
+    <modelElement href="java-challenge2.uml#_KG6Bw0nBEe2dKMuKllvcPQ"/>
+    <visualProperties xmi:id="_KzI1oUnBEe2dKMuKllvcPQ" position="210.0,210.0"/>
+    <stereotypes xmi:id="_KzA50EnBEe2dKMuKllvcPQ" name="Reference">
+      <modelElement href="java-challenge2.uml#_KG6o0EnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_KzASwUnBEe2dKMuKllvcPQ" text=""/>
+    <sourceRole xmi:id="_KzASwknBEe2dKMuKllvcPQ" aggregationKind="NONE" name="">
+      <modelElement href="java-challenge2.uml#_KG6BxEnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_KzA50knBEe2dKMuKllvcPQ" label="+"/>
+      <cardinality xmi:id="_KzA50UnBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_KzASw0nBEe2dKMuKllvcPQ" aggregationKind="NONE" name="balls" navigable="true">
+      <modelElement href="java-challenge2.uml#_KG1JQEnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_KzA51EnBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_KzA500nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_KzCH8EnBEe2dKMuKllvcPQ" sourceAnchor="0.0,62.0" targetAnchor="99.0,93.0" target="_KzA51knBEe2dKMuKllvcPQ" source="_KzDWFEnBEe2dKMuKllvcPQ">
+    <modelElement href="java-challenge2.uml#_KG6o0UnBEe2dKMuKllvcPQ"/>
+    <visualProperties xmi:id="_KzI1oknBEe2dKMuKllvcPQ" position="230.0,230.0"/>
+    <bendpoints xmi:id="_LALzIEnBEe2dKMuKllvcPQ" sourceX="-182" targetY="117"/>
+    <stereotypes xmi:id="_KzCvA0nBEe2dKMuKllvcPQ" name="Reference">
+      <modelElement href="java-challenge2.uml#_KG6o00nBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_KzCvAEnBEe2dKMuKllvcPQ" text="">
+      <visualProperties xmi:id="_LAMaMknBEe2dKMuKllvcPQ" position="0.5,-55.99999999999996"/>
+    </nameVisual>
+    <sourceRole xmi:id="_KzCvAUnBEe2dKMuKllvcPQ" aggregationKind="NONE" name="">
+      <modelElement href="java-challenge2.uml#_KG6o0knBEe2dKMuKllvcPQ"/>
+      <visualProperties xmi:id="_LAMaMUnBEe2dKMuKllvcPQ" position="-15.0,2.0"/>
+      <visibility xmi:id="_KzDWEUnBEe2dKMuKllvcPQ" label="+"/>
+      <cardinality xmi:id="_KzDWEEnBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_KzCvAknBEe2dKMuKllvcPQ" aggregationKind="NONE" name="frame" navigable="true">
+      <modelElement href="java-challenge2.uml#_KG1wUknBEe2dKMuKllvcPQ"/>
+      <visualProperties xmi:id="_LAMaM0nBEe2dKMuKllvcPQ" position="1.5,1.0000000000000568"/>
+      <visibility xmi:id="_KzDWE0nBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_KzDWEknBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_KzFLQEnBEe2dKMuKllvcPQ" source="_KzFyWEnBEe2dKMuKllvcPQ">
+    <modelElement href="java-challenge2.uml#_KG6o1EnBEe2dKMuKllvcPQ"/>
+    <visualProperties xmi:id="_KzI1o0nBEe2dKMuKllvcPQ" position="250.0,250.0"/>
+    <stereotypes xmi:id="_KzFyUknBEe2dKMuKllvcPQ" name="Reference">
+      <modelElement href="java-challenge2.uml#_KG7P4EnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_KzFLQUnBEe2dKMuKllvcPQ" text=""/>
+    <sourceRole xmi:id="_KzFyUEnBEe2dKMuKllvcPQ" aggregationKind="NONE" name="">
+      <modelElement href="java-challenge2.uml#_KG6o1UnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_KzFyVEnBEe2dKMuKllvcPQ" label="+"/>
+      <cardinality xmi:id="_KzFyU0nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_KzFyUUnBEe2dKMuKllvcPQ" aggregationKind="NONE" name="frameInfoList" navigable="true">
+      <modelElement href="java-challenge2.uml#_KG2-cEnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_KzFyVknBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_KzFyVUnBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_KzHAcEnBEe2dKMuKllvcPQ" sourceAnchor="78.0,20.0" targetAnchor="105.0,86.0" target="_KzFyWEnBEe2dKMuKllvcPQ" source="_KzIOkEnBEe2dKMuKllvcPQ">
+    <modelElement href="java-challenge2.uml#_KG7P4UnBEe2dKMuKllvcPQ"/>
+    <visualProperties xmi:id="_KzI1pEnBEe2dKMuKllvcPQ" position="270.0,270.0"/>
+    <bendpoints xmi:id="_LAMaMEnBEe2dKMuKllvcPQ" sourceX="161" targetY="75"/>
+    <stereotypes xmi:id="_KzHng0nBEe2dKMuKllvcPQ" name="Reference">
+      <modelElement href="java-challenge2.uml#_KG7P40nBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_KzHngEnBEe2dKMuKllvcPQ" text="">
+      <visualProperties xmi:id="_LANBQEnBEe2dKMuKllvcPQ" position="-42.5,-55.99999999999994"/>
+    </nameVisual>
+    <sourceRole xmi:id="_KzHngUnBEe2dKMuKllvcPQ" aggregationKind="NONE" name="">
+      <modelElement href="java-challenge2.uml#_KG7P4knBEe2dKMuKllvcPQ"/>
+      <visualProperties xmi:id="_LAMaNEnBEe2dKMuKllvcPQ" position="1.5,-43.0"/>
+      <visibility xmi:id="_KzHnhUnBEe2dKMuKllvcPQ" label="+"/>
+      <cardinality xmi:id="_KzHnhEnBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_KzHngknBEe2dKMuKllvcPQ" aggregationKind="NONE" name="players" navigable="true">
+      <modelElement href="java-challenge2.uml#_KG3lgEnBEe2dKMuKllvcPQ"/>
+      <visualProperties xmi:id="_LANBQUnBEe2dKMuKllvcPQ" position="2.5,1.0"/>
+      <visibility xmi:id="_KzHnh0nBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_KzHnhknBEe2dKMuKllvcPQ" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Ky5lEEnBEe2dKMuKllvcPQ" name="Ball">
+    <modelElement href="java-challenge2.uml#_KGBQ8EnBEe2dKMuKllvcPQ"/>
+    <visualProperties xmi:id="_Ky5lEUnBEe2dKMuKllvcPQ" position="50.0,50.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_Ky5lEknBEe2dKMuKllvcPQ" name="LegacyStyledElement">
+      <modelElement href="java-challenge2.uml#_KGB4AEnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <stereotypes xmi:id="_Ky5lE0nBEe2dKMuKllvcPQ" name="Annotations">
+      <modelElement href="java-challenge2.uml#_KGDGIEnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <visibility xmi:id="_Ky5lFEnBEe2dKMuKllvcPQ" label="+"/>
+    <attributes xmi:id="_Ky5lFUnBEe2dKMuKllvcPQ" name="name">
+      <modelElement href="java-challenge2.uml#_KGzUEEnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_Ky5lFknBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_Ky5lF0nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <type xmi:id="_Ky5lGEnBEe2dKMuKllvcPQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Ky5lGUnBEe2dKMuKllvcPQ" name="result">
+      <modelElement href="java-challenge2.uml#_KGzUEUnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_Ky5lGknBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_Ky5lG0nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <type xmi:id="_Ky5lHEnBEe2dKMuKllvcPQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Ky8BUEnBEe2dKMuKllvcPQ" name="BallResult">
+    <modelElement href="java-challenge2.uml#_KGDGJEnBEe2dKMuKllvcPQ"/>
+    <visualProperties xmi:id="_Ky8BUUnBEe2dKMuKllvcPQ" position="235.0,-82.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_Ky8BUknBEe2dKMuKllvcPQ" name="LegacyStyledElement">
+      <modelElement href="java-challenge2.uml#_KGDtMEnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <stereotypes xmi:id="_Ky8BU0nBEe2dKMuKllvcPQ" name="Annotations">
+      <modelElement href="java-challenge2.uml#_KGE7UEnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <visibility xmi:id="_Ky8BVEnBEe2dKMuKllvcPQ" label="+"/>
+    <attributes xmi:id="_Ky8BVUnBEe2dKMuKllvcPQ" name="isFaul">
+      <modelElement href="java-challenge2.uml#_KGz7IEnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_Ky8BVknBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_Ky8BV0nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <type xmi:id="_Ky8BWEnBEe2dKMuKllvcPQ" name="boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_Ky8BWUnBEe2dKMuKllvcPQ" name="value">
+      <modelElement href="java-challenge2.uml#_KGz7IUnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_Ky8BWknBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_Ky8BW0nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <type xmi:id="_Ky8BXEnBEe2dKMuKllvcPQ" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_Ky8BXUnBEe2dKMuKllvcPQ" name="hashCode">
+      <modelElement href="java-challenge2.uml#_KGEUQEnBEe2dKMuKllvcPQ"/>
+      <stereotypes xmi:id="_Ky8BXknBEe2dKMuKllvcPQ" name="Annotations">
+        <modelElement href="java-challenge2.uml#_KGEUQknBEe2dKMuKllvcPQ"/>
+      </stereotypes>
+      <visibility xmi:id="_Ky8BX0nBEe2dKMuKllvcPQ" label="+"/>
+      <cardinality xmi:id="_Ky8BYEnBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_Ky8BYUnBEe2dKMuKllvcPQ">
+        <modelElement href="java-challenge2.uml#_KGEUQUnBEe2dKMuKllvcPQ"/>
+        <type xmi:id="_Ky8BYknBEe2dKMuKllvcPQ" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_Ky8BY0nBEe2dKMuKllvcPQ" name="compareTo">
+      <modelElement href="java-challenge2.uml#_KGqxMUnBEe2dKMuKllvcPQ"/>
+      <stereotypes xmi:id="_Ky8BZEnBEe2dKMuKllvcPQ" name="Annotations">
+        <modelElement href="java-challenge2.uml#_KGrYQEnBEe2dKMuKllvcPQ"/>
+      </stereotypes>
+      <visibility xmi:id="_Ky8BZUnBEe2dKMuKllvcPQ" label="+"/>
+      <cardinality xmi:id="_Ky8BZknBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_Ky8BZ0nBEe2dKMuKllvcPQ">
+        <modelElement href="java-challenge2.uml#_KGqxM0nBEe2dKMuKllvcPQ"/>
+        <type xmi:id="_Ky8BaEnBEe2dKMuKllvcPQ" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_Ky8BaUnBEe2dKMuKllvcPQ" name="o">
+        <modelElement href="java-challenge2.uml#_KGqxMknBEe2dKMuKllvcPQ"/>
+        <cardinality xmi:id="_Ky8BaknBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+        <type xmi:id="_Ky8Ba0nBEe2dKMuKllvcPQ" name="BallResult">
+          <modelElement href="java-challenge2.uml#_KGDGJEnBEe2dKMuKllvcPQ"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_Ky8BbEnBEe2dKMuKllvcPQ" name="equals">
+      <modelElement href="java-challenge2.uml#_KGxe4UnBEe2dKMuKllvcPQ"/>
+      <stereotypes xmi:id="_Ky8BbUnBEe2dKMuKllvcPQ" name="Annotations">
+        <modelElement href="java-challenge2.uml#_KGyF8EnBEe2dKMuKllvcPQ"/>
+      </stereotypes>
+      <visibility xmi:id="_Ky8BbknBEe2dKMuKllvcPQ" label="+"/>
+      <cardinality xmi:id="_Ky8Bb0nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_Ky8BcEnBEe2dKMuKllvcPQ">
+        <modelElement href="java-challenge2.uml#_KGxe40nBEe2dKMuKllvcPQ"/>
+        <type xmi:id="_Ky8BcUnBEe2dKMuKllvcPQ" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_Ky8BcknBEe2dKMuKllvcPQ" name="obj">
+        <modelElement href="java-challenge2.uml#_KGxe4knBEe2dKMuKllvcPQ"/>
+        <cardinality xmi:id="_Ky8Bc0nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+        <type xmi:id="_Ky8BdEnBEe2dKMuKllvcPQ" name="Object">
+          <modelElement href="java-challenge2.uml#_KGw30UnBEe2dKMuKllvcPQ"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Ky_EqUnBEe2dKMuKllvcPQ" name="BowlingGame" associationsOut="_Ky_EoEnBEe2dKMuKllvcPQ">
+    <modelElement href="java-challenge2.uml#_KGGJcEnBEe2dKMuKllvcPQ"/>
+    <visualProperties xmi:id="_Ky_EqknBEe2dKMuKllvcPQ" position="13.0,-74.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_Ky_Eq0nBEe2dKMuKllvcPQ" name="LegacyStyledElement">
+      <modelElement href="java-challenge2.uml#_KGGwgEnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <stereotypes xmi:id="_Ky_ErEnBEe2dKMuKllvcPQ" name="Annotations">
+      <modelElement href="java-challenge2.uml#_KGGwgUnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <visibility xmi:id="_Ky_ErUnBEe2dKMuKllvcPQ" label="+"/>
+    <attributes xmi:id="_Ky_ErknBEe2dKMuKllvcPQ" name="balls">
+      <modelElement href="java-challenge2.uml#_KG0iMEnBEe2dKMuKllvcPQ"/>
+      <stereotypes xmi:id="_Ky_Er0nBEe2dKMuKllvcPQ" name="Generics">
+        <modelElement href="java-challenge2.uml#_KG0iMUnBEe2dKMuKllvcPQ"/>
+      </stereotypes>
+      <visibility xmi:id="_Ky_EsEnBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_Ky_EsUnBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <type xmi:id="_Ky_EsknBEe2dKMuKllvcPQ" name="ArrayList">
+        <modelElement href="java-challenge2.uml#_KGr_UEnBEe2dKMuKllvcPQ"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_KzA51knBEe2dKMuKllvcPQ" name="Frame" associationsIn="_KzCH8EnBEe2dKMuKllvcPQ" associationsOut="_KzASwEnBEe2dKMuKllvcPQ">
+    <modelElement href="java-challenge2.uml#_KGHXkUnBEe2dKMuKllvcPQ"/>
+    <visualProperties xmi:id="_KzA510nBEe2dKMuKllvcPQ" position="-584.0,-279.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_KzA52EnBEe2dKMuKllvcPQ" name="LegacyStyledElement">
+      <modelElement href="java-challenge2.uml#_KGH-oEnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <stereotypes xmi:id="_KzA52UnBEe2dKMuKllvcPQ" name="Annotations">
+      <modelElement href="java-challenge2.uml#_KGIlsUnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <visibility xmi:id="_KzA52knBEe2dKMuKllvcPQ" label="+"/>
+    <attributes xmi:id="_KzA520nBEe2dKMuKllvcPQ" name="balls">
+      <modelElement href="java-challenge2.uml#_KG1JQEnBEe2dKMuKllvcPQ"/>
+      <stereotypes xmi:id="_KzA53EnBEe2dKMuKllvcPQ" name="Generics">
+        <modelElement href="java-challenge2.uml#_KG1JQUnBEe2dKMuKllvcPQ"/>
+      </stereotypes>
+      <visibility xmi:id="_KzA53UnBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_KzA53knBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <type xmi:id="_KzA530nBEe2dKMuKllvcPQ" name="ArrayList">
+        <modelElement href="java-challenge2.uml#_KGr_UEnBEe2dKMuKllvcPQ"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_KzA54EnBEe2dKMuKllvcPQ" name="getTotalPinsInTurn">
+      <modelElement href="java-challenge2.uml#_KGH-oUnBEe2dKMuKllvcPQ"/>
+      <stereotypes xmi:id="_KzA54UnBEe2dKMuKllvcPQ" name="StyledElement">
+        <modelElement href="java-challenge2.uml#_KGIlsEnBEe2dKMuKllvcPQ"/>
+      </stereotypes>
+      <visibility xmi:id="_KzA54knBEe2dKMuKllvcPQ" label="+"/>
+      <cardinality xmi:id="_KzA540nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_KzA55EnBEe2dKMuKllvcPQ">
+        <modelElement href="java-challenge2.uml#_KGH-oknBEe2dKMuKllvcPQ"/>
+        <type xmi:id="_KzA55UnBEe2dKMuKllvcPQ" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_KzDWFEnBEe2dKMuKllvcPQ" name="FrameInfo" associationsOut="_KzCH8EnBEe2dKMuKllvcPQ">
+    <modelElement href="java-challenge2.uml#_KGJMwEnBEe2dKMuKllvcPQ"/>
+    <visualProperties xmi:id="_KzDWFUnBEe2dKMuKllvcPQ" position="-303.0,-131.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_KzDWFknBEe2dKMuKllvcPQ" name="LegacyStyledElement">
+      <modelElement href="java-challenge2.uml#_KGJMwUnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <stereotypes xmi:id="_KzDWF0nBEe2dKMuKllvcPQ" name="Annotations">
+      <modelElement href="java-challenge2.uml#_KGJz0EnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <visibility xmi:id="_KzDWGEnBEe2dKMuKllvcPQ" label="+"/>
+    <attributes xmi:id="_KzDWGUnBEe2dKMuKllvcPQ" name="frameIndex">
+      <modelElement href="java-challenge2.uml#_KG1wUEnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_KzDWGknBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_KzDWG0nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <type xmi:id="_KzDWHEnBEe2dKMuKllvcPQ" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_KzDWHUnBEe2dKMuKllvcPQ" name="playerName">
+      <modelElement href="java-challenge2.uml#_KG1wUUnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_KzDWHknBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_KzDWH0nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <type xmi:id="_KzDWIEnBEe2dKMuKllvcPQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_KzDWIUnBEe2dKMuKllvcPQ" name="frame">
+      <modelElement href="java-challenge2.uml#_KG1wUknBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_KzDWIknBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_KzDWI0nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <type xmi:id="_KzDWJEnBEe2dKMuKllvcPQ" name="Frame">
+        <modelElement href="java-challenge2.uml#_KGHXkUnBEe2dKMuKllvcPQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_KzDWJUnBEe2dKMuKllvcPQ" name="scoreUpToThisFrameInclusive">
+      <modelElement href="java-challenge2.uml#_KG2XYEnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_KzDWJknBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_KzDWJ0nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <type xmi:id="_KzDWKEnBEe2dKMuKllvcPQ" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_KzDWKUnBEe2dKMuKllvcPQ" name="frameScore">
+      <modelElement href="java-challenge2.uml#_KG2XYUnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_KzDWKknBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_KzDWK0nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <type xmi:id="_KzDWLEnBEe2dKMuKllvcPQ" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_KzFyWEnBEe2dKMuKllvcPQ" name="Player" associationsIn="_KzHAcEnBEe2dKMuKllvcPQ" associationsOut="_KzFLQEnBEe2dKMuKllvcPQ">
+    <modelElement href="java-challenge2.uml#_KGKa4EnBEe2dKMuKllvcPQ"/>
+    <visualProperties xmi:id="_KzFyWUnBEe2dKMuKllvcPQ" position="689.0,-188.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_KzFyWknBEe2dKMuKllvcPQ" name="LegacyStyledElement">
+      <modelElement href="java-challenge2.uml#_KGLB8EnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <stereotypes xmi:id="_KzFyW0nBEe2dKMuKllvcPQ" name="Annotations">
+      <modelElement href="java-challenge2.uml#_KGLB8UnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <visibility xmi:id="_KzFyXEnBEe2dKMuKllvcPQ" label="+"/>
+    <attributes xmi:id="_KzFyXUnBEe2dKMuKllvcPQ" name="name">
+      <modelElement href="java-challenge2.uml#_KG2XYknBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_KzFyXknBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_KzFyX0nBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <type xmi:id="_KzFyYEnBEe2dKMuKllvcPQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_KzFyYUnBEe2dKMuKllvcPQ" name="frameInfoList">
+      <modelElement href="java-challenge2.uml#_KG2-cEnBEe2dKMuKllvcPQ"/>
+      <stereotypes xmi:id="_KzFyYknBEe2dKMuKllvcPQ" name="Generics">
+        <modelElement href="java-challenge2.uml#_KG2-cUnBEe2dKMuKllvcPQ"/>
+      </stereotypes>
+      <visibility xmi:id="_KzFyY0nBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_KzFyZEnBEe2dKMuKllvcPQ" label="1" max="1" min="1"/>
+      <type xmi:id="_KzFyZUnBEe2dKMuKllvcPQ" name="ArrayList">
+        <modelElement href="java-challenge2.uml#_KGr_UEnBEe2dKMuKllvcPQ"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_KzIOkEnBEe2dKMuKllvcPQ" name="ScoreBoard" associationsOut="_KzHAcEnBEe2dKMuKllvcPQ">
+    <modelElement href="java-challenge2.uml#_KGLpAEnBEe2dKMuKllvcPQ"/>
+    <visualProperties xmi:id="_KzIOkUnBEe2dKMuKllvcPQ" position="555.0,-47.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_KzIOkknBEe2dKMuKllvcPQ" name="LegacyStyledElement">
+      <modelElement href="java-challenge2.uml#_KGLpAUnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <stereotypes xmi:id="_KzIOk0nBEe2dKMuKllvcPQ" name="Annotations">
+      <modelElement href="java-challenge2.uml#_KGMQEEnBEe2dKMuKllvcPQ"/>
+    </stereotypes>
+    <visibility xmi:id="_KzIOlEnBEe2dKMuKllvcPQ" label="+"/>
+    <attributes xmi:id="_KzIOlUnBEe2dKMuKllvcPQ" name="players">
+      <modelElement href="java-challenge2.uml#_KG3lgEnBEe2dKMuKllvcPQ"/>
+      <visibility xmi:id="_KzIOlknBEe2dKMuKllvcPQ" label="-"/>
+      <cardinality xmi:id="_KzIOl0nBEe2dKMuKllvcPQ" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_KzIOmEnBEe2dKMuKllvcPQ" name="Player">
+        <modelElement href="java-challenge2.uml#_KGKa4EnBEe2dKMuKllvcPQ"/>
+      </type>
+    </attributes>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

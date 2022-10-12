@@ -27,7 +27,8 @@ class ServiceIntegrationTest {
   void testWhenTakeAnyPositiveInputFileThenNoExecutionIsThrown() throws IOException, RJCException {
 
     for (String fileName : RJCUtils.getFilesInDirectory(Global.POSITIVE_TEST_FILES_DIRECTORY)) {
-      assertDoesNotThrow(() -> service.run(new String[] { "-f", Global.POSITIVE_TEST_FILES_DIRECTORY + fileName }));
+      assertDoesNotThrow(() -> service
+          .run(new String[] { "-f", Global.POSITIVE_TEST_FILES_DIRECTORY + fileName }));
     }
   }
 

@@ -11,6 +11,12 @@ import java.util.stream.Stream;
 
 import com.rjc.loggers.BLog;
 
+/**
+ * Utilities for the app
+ *
+ * @author niquefa
+ *
+ */
 public final class RJCUtils {
 
   private RJCUtils() {

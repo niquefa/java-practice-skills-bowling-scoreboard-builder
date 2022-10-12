@@ -1,5 +1,11 @@
 package com.rjc.constants;
 
+/**
+ * Global constants for the app
+ *
+ * @author niquefa
+ *
+ */
 public final class Global {
 
   private Global() {

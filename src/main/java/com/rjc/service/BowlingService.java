@@ -13,6 +13,12 @@ import com.rjc.validators.RawDataValidator;
 import com.rjc.view.Viewer;
 import com.rjc.view.ViewerFactory;
 
+/**
+ * The service that process the input data and shows the final scoreboard.
+ *
+ * @author niquefa
+ *
+ */
 public class BowlingService {
 
   private DataRepository dataRepository;

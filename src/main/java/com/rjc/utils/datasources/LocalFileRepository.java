@@ -7,6 +7,12 @@ import java.util.List;
 import com.rjc.exceptions.RJCException;
 import com.rjc.utils.RJCUtils;
 
+/**
+ * A DataRepository to get data from a file in the file system
+ *
+ * @author niquefa
+ *
+ */
 public class LocalFileRepository implements DataRepository {
 
   private String fileName;

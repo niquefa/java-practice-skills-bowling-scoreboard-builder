@@ -16,6 +16,13 @@ import com.rjc.exceptions.ToFewBallsInPlayerException;
 import com.rjc.exceptions.WrongNumberOfBallsInLastFrameException;
 import com.rjc.utils.GameUtilities;
 
+/**
+ * Class to validate Game data information, utilities to check whether or not
+ * the input data represents a valid Bowling game finished
+ *
+ * @author niquefa
+ *
+ */
 public class GameDataIntegrityValidator {
 
   private GameDataIntegrityValidator() {

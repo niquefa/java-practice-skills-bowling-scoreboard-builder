@@ -10,8 +10,16 @@ import java.util.List;
 import com.rjc.entities.BallResult;
 import com.rjc.entities.FrameInfo;
 import com.rjc.entities.Player;
-import com.rjc.exceptions.GameBuildingException;
+import com.rjc.exceptions.UnforseenGameBuildingException;
 import com.rjc.validators.GameDataIntegrityValidator;
+
+/**
+ * Utility methods and constants to build the console view of the scoreboard for
+ * the bowling game in the input data
+ *
+ * @author niquefa
+ *
+ */
 
 public final class ConsoleViewUtilities {
 
@@ -90,10 +98,10 @@ public final class ConsoleViewUtilities {
    * @param player
    * @param firstColumnWidth
    * @return
-   * @throws GameBuildingException
+   * @throws UnforseenGameBuildingException
    */
   public static String buildPinFallsForPlayer(Player player, int firstColumnWidth)
-      throws GameBuildingException {
+      throws UnforseenGameBuildingException {
 
     StringBuilder sb = new StringBuilder(aliginLeft(PIN_FALLS_IDENTIFICATION, firstColumnWidth));
     ArrayList<FrameInfo> frameInfoList = player.getFrameInfoList();
@@ -105,9 +113,9 @@ public final class ConsoleViewUtilities {
 
   private static String buildOtherThanLastFrameString(ArrayList<BallResult> balls,
       String playerName)
-      throws GameBuildingException {
+      throws UnforseenGameBuildingException {
     if (balls == null || balls.isEmpty() || balls.size() > MAX_POSSIBLE_BALLS_IN_LAST_FRAME - 1) {
-      throw new GameBuildingException(String.format(
+      throw new UnforseenGameBuildingException(String.format(
           "Error: Other than Last frame with wrong number of ball for player %s. Balls: %s",
           playerName, balls));
     }
@@ -127,7 +135,7 @@ public final class ConsoleViewUtilities {
 
     if (balls.get(1).getValue() == MAX_POSSIBLE_PINS_KNOCKED_BY_A_BALL
         && balls.get(0).getValue() < 0) {
-      throw new GameBuildingException(String.format(
+      throw new UnforseenGameBuildingException(String.format(
           "Error: Other than Last frame with strike as second ball and no 0 pins for first frame ball for player %s. Balls: %s",
           playerName, balls));
     } else if (balls.get(1).getValue() == 0) {
@@ -151,10 +159,10 @@ public final class ConsoleViewUtilities {
   }
 
   private static String buildLastFrameString(ArrayList<BallResult> balls, String playerName)
-      throws GameBuildingException {
+      throws UnforseenGameBuildingException {
 
     if (balls == null || balls.isEmpty() || balls.size() > MAX_POSSIBLE_BALLS_IN_LAST_FRAME) {
-      throw new GameBuildingException(
+      throw new UnforseenGameBuildingException(
           String.format("Error: Last frame with wrong number of ball for player %s. Balls: %s",
               playerName, balls));
     }
@@ -168,7 +176,7 @@ public final class ConsoleViewUtilities {
     }
 
     if (balls.size() < 2) {
-      throw new GameBuildingException(
+      throw new UnforseenGameBuildingException(
           String.format("Error: Last frame with only one ball for player %s", playerName));
     }
 
@@ -221,32 +229,33 @@ public final class ConsoleViewUtilities {
 
   }
 
-  private static String buildPinFallsString(FrameInfo frameInfo) throws GameBuildingException {
+  private static String buildPinFallsString(FrameInfo frameInfo)
+      throws UnforseenGameBuildingException {
 
     ArrayList<BallResult> balls = frameInfo.getFrame().getBalls();
 
     if (balls == null) {
-      throw new GameBuildingException(
+      throw new UnforseenGameBuildingException(
           String.format("Error: Frame with no null in balls list for player %s",
               frameInfo.getPlayerName()));
     }
 
     if (balls.size() > MAX_POSSIBLE_BALLS_IN_LAST_FRAME) {
-      throw new GameBuildingException(
+      throw new UnforseenGameBuildingException(
           String.format("Error: Frame with to many balls (%d balls) list for player %s",
               balls.size(), frameInfo.getPlayerName()));
     }
 
     if (frameInfo.getFrameIndex() < MAX_POSSIBLE_FRAMES
         && balls.size() > MAX_POSSIBLE_BALLS_IN_LAST_FRAME - 1) {
-      throw new GameBuildingException(
+      throw new UnforseenGameBuildingException(
           String.format("Error: Frame with to many balls (%d balls) for frame % list for player %s",
               balls.size(),
               frameInfo.getFrameIndex(), frameInfo.getPlayerName()));
     }
 
     if (balls.isEmpty()) {
-      throw new GameBuildingException(
+      throw new UnforseenGameBuildingException(
           String.format("Error: Frame with zero balls in list for player %s",
               frameInfo.getPlayerName()));
     }
