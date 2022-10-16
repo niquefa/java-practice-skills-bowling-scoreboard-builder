@@ -1,11 +1,4 @@
-# Just to practice Rafael Niquefa
-
-# Important anotation about the problem description
-
-I changed a requirement in the problem description because I considered very desirable. That was, for the output format:
-```All values are tab-separated.```
-
-The program do not follow that requirement because if followed, that could cause to print a scoreboard very hard to read when for example there are very long names and very short names of players in the same input. The programs makes the alignment of all the **columns** using spaces and can support any length of names, including input with firstname and last name separated by spaces. NOTE: The input should be separated by tabs, it will be considered wrong input if not.
+# Just to practice Java
 
 ## Current test coverage
 
